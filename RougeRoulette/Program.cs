@@ -17,7 +17,9 @@ namespace Rouge_Roulette
                 WriteLine("Enter 3 to Exit.");
 
                 string Userinput = ReadLine();
-
+                
+                WriteLine("Hello World");
+                
                 if (Userinput == "1")
                 {
                     Gamestart();
