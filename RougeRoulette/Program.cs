@@ -10,7 +10,7 @@ namespace Rouge_Roulette
         {
             while (true)
             {
-                WriteLine("Welcome to Rouge Roulette, are you prepared to take on the Dealer in a game of fate...?");
+                WriteLine("Welcome to Rouge Roulette: Are you prepared to take on the Dealer in a game of fate...?");
                 WriteLine("== WARNING EVERYTHING HERE IS FICTIONAL, DO NOT RECREATE WHAT HAPPENS WITHIN THIS GAME ==");
                 WriteLine("Enter 1 to start the game.");
                 WriteLine("Enter 2 to view the rules.");
