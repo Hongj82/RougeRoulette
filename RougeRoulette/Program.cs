@@ -17,7 +17,7 @@ namespace Rouge_Roulette
                 WriteLine("Enter 3 to Exit.");
 
                 string Userinput = ReadLine();
-                
+                WriteLine("Hello");
                 WriteLine("Hello World");
                 Write("INFO350");
                 Write("Jaella"); //this is a comment
