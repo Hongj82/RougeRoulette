@@ -18,9 +18,6 @@ namespace Rouge_Roulette
 
                 string Userinput = ReadLine();
                 
-                WriteLine("Hello World");
-                Write("INFO350");
-                Write("Jaella"); //this is a comment
 
                 if (Userinput == "1")
                 {
@@ -32,6 +29,7 @@ namespace Rouge_Roulette
                 }
                 else if (Userinput == "3")
                 {
+                    WriteLine("Thanks for playing...");
                     break;
                 }
                 else
