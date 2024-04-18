@@ -19,7 +19,8 @@ namespace Rouge_Roulette
                 string Userinput = ReadLine();
                 
                 WriteLine("Hello World");
-                
+                Write("INFO350");
+
                 if (Userinput == "1")
                 {
                     Gamestart();
