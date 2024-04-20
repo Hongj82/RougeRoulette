@@ -1,17 +1,12 @@
 ﻿using System;
-using System.ComponentModel.Design;
-using System.Formats.Asn1;
 using static System.Console;
+
 namespace Rouge_Roulette
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-
-            int numPlayers = GetPlayerNum("Enter the number of players: ");
-
-            string[] players = GetPlayerNames(numPlayers);
 
             while (true)
             {
@@ -30,6 +25,7 @@ namespace Rouge_Roulette
                 else if (Userinput == "2")
                 {
                     Viewrules();
+                    Awaitingkeypress(); // Add this line to wait for key press after displaying rules
                 }
                 else if (Userinput == "3")
                 {
@@ -41,7 +37,6 @@ namespace Rouge_Roulette
                     Awaitingkeypress();
                 }
             }
-
 
         }
 
@@ -70,19 +65,32 @@ namespace Rouge_Roulette
 
             for (int i = 0; i < numPlayers; i++)
             {
-                WriteLine("Enter the name of player {0}", i + 1);
+                Write("Enter the name of player {0}: ", i + 1);
                 players[i] = ReadLine();
             }
 
             return players;
         }
-
+        
+        static void DisplayPlayerNames(string[] players)
+        {
+            WriteLine("Player names:");
+            for (int i = 0; i < players.Length; i++)
+            {
+                WriteLine(players[i]);
+            }
+        }
 
         static void Gamestart()
         {
             Clear();
             WriteLine("The game is starting...");
+            int numPlayers = GetPlayerNum("Enter the number of players: ");
+            string[] players = GetPlayerNames(numPlayers);
+            DisplayPlayerNames(players);
+            Awaitingkeypress(); // Add this line to wait for key press after displaying player names
         }
+
         static void Viewrules()
         {
             Clear();
@@ -90,8 +98,8 @@ namespace Rouge_Roulette
             WriteLine("2. xyz");
             WriteLine("3. xyz");
             WriteLine("4. xyz");
-            Awaitingkeypress();
         }
+
         static void Awaitingkeypress()
         {
             WriteLine("\nPress any key to continue...");
