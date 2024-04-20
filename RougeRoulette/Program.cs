@@ -3,7 +3,7 @@ using static System.Console;
 
 namespace Rouge_Roulette
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -89,6 +89,9 @@ namespace Rouge_Roulette
             string[] players = GetPlayerNames(numPlayers);
             DisplayPlayerNames(players);
             Awaitingkeypress(); // Add this line to wait for key press after displaying player names
+
+            Revolver revolver1 = new Revolver();
+            
         }
 
         static void Viewrules()
