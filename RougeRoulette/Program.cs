@@ -8,6 +8,13 @@ namespace Rouge_Roulette
     {
         static void Main(string[] args)
         {
+
+            int numPlayers = GetInput("Enter the number of players: ");
+
+            string[] players = GetPlayerNames(numPlayers);
+
+            string[] players = new string[];
+
             while (true)
             {
                 WriteLine("Welcome to Rouge Roulette: Are you prepared to take on the Dealer in a game of fate...?");
@@ -40,7 +47,43 @@ namespace Rouge_Roulette
                     Awaitingkeypress();
                 }
             }
+
+
         }
+
+        static int GetPlayerNumber(string msg)
+        {
+            int numPlayers;
+            string input;
+            do
+            {
+                Write(msg);
+                input = ReadLine();
+                numPlayers = int.Parse(input);
+
+                if (int.Parse(input) <= 0)
+                {
+                    WriteLine("Invalid Input.Try Again!");
+                }
+            } while (int.Parse(input) <= 0);
+
+            return numPlayers;
+        }
+        
+        static string[] GetPlayerNames(int numPlayers)
+        {
+            string[] players = new string[numPlayers];
+
+            for (int i = 0; i < numPlayers; i++)
+            {
+                WriteLine("Enter the name of player {i + 1}: ");
+                players[i] = ReadLine();
+            }
+
+            return players;
+        }
+
+
         static void Gamestart()
         {
             Clear();
