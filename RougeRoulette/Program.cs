@@ -9,11 +9,9 @@ namespace Rouge_Roulette
         static void Main(string[] args)
         {
 
-            int numPlayers = GetInput("Enter the number of players: ");
+            int numPlayers = GetPlayerNum("Enter the number of players: ");
 
             string[] players = GetPlayerNames(numPlayers);
-
-            string[] players = new string[];
 
             while (true)
             {
@@ -24,11 +22,7 @@ namespace Rouge_Roulette
                 WriteLine("Enter 3 to Exit.");
 
                 string Userinput = ReadLine();
-                WriteLine("Hello");
-                WriteLine("Hello World");
-                Write("INFO350");
-                Write("Jaella"); //this is a comment
-
+               
                 if (Userinput == "1")
                 {
                     Gamestart();
@@ -51,7 +45,7 @@ namespace Rouge_Roulette
 
         }
 
-        static int GetPlayerNumber(string msg)
+        static int GetPlayerNum(string msg)
         {
             int numPlayers;
             string input;
@@ -76,7 +70,7 @@ namespace Rouge_Roulette
 
             for (int i = 0; i < numPlayers; i++)
             {
-                WriteLine("Enter the name of player {i + 1}: ");
+                WriteLine("Enter the name of player {0}", i + 1);
                 players[i] = ReadLine();
             }
 
