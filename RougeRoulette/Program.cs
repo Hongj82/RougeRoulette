@@ -10,14 +10,18 @@ namespace Rouge_Roulette
         {
             while (true)
             {
-                WriteLine("Welcome to Rouge Roulette, are you prepared to take on the Dealer in a game of fate...?");
+                WriteLine("Welcome to Rouge Roulette: Are you prepared to take on the Dealer in a game of fate...?");
                 WriteLine("== WARNING EVERYTHING HERE IS FICTIONAL, DO NOT RECREATE WHAT HAPPENS WITHIN THIS GAME ==");
                 WriteLine("Enter 1 to start the game.");
                 WriteLine("Enter 2 to view the rules.");
                 WriteLine("Enter 3 to Exit.");
 
+
                 string Userinput = ReadLine();
                 
+                WriteLine("Hello World");
+                Write("INFO350");
+                Write("Jaella"); //this is a comment
 
                 if (Userinput == "1")
                 {
@@ -48,7 +52,7 @@ namespace Rouge_Roulette
         {
             Clear();
             WriteLine("1. Welcome to Rouge Roulette! If this is your first time playing a game like Russian Roulette please read below!");
-            WriteLine("2. xyz");
+            WriteLine("2. First, please input the the players names");
             WriteLine("3. xyz");
             WriteLine("4. xyz");
             Awaitingkeypress();
