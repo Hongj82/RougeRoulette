@@ -1,13 +1,13 @@
 ﻿using System;
-using System.ComponentModel.Design;
-using System.Formats.Asn1;
 using static System.Console;
+
 namespace Rouge_Roulette
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
+
             while (true)
             {
                 WriteLine("Welcome to Rouge Roulette: Are you prepared to take on the Dealer in a game of fate...?");
@@ -30,6 +30,7 @@ namespace Rouge_Roulette
                 else if (Userinput == "2")
                 {
                     Viewrules();
+                    Awaitingkeypress(); // Add this line to wait for key press after displaying rules
                 }
                 else if (Userinput == "3")
                 {
@@ -42,12 +43,63 @@ namespace Rouge_Roulette
                     Awaitingkeypress();
                 }
             }
+
         }
+
+        static int GetPlayerNum(string msg)
+        {
+            int numPlayers;
+            string input;
+            do
+            {
+                Write(msg);
+                input = ReadLine();
+                numPlayers = int.Parse(input);
+
+                if (int.Parse(input) <= 0)
+                {
+                    WriteLine("Invalid Input.Try Again!");
+                }
+            } while (int.Parse(input) <= 0);
+
+            return numPlayers;
+        }
+        
+        static string[] GetPlayerNames(int numPlayers)
+        {
+            string[] players = new string[numPlayers];
+
+            for (int i = 0; i < numPlayers; i++)
+            {
+                Write("Enter the name of player {0}: ", i + 1);
+                players[i] = ReadLine();
+            }
+
+            return players;
+        }
+        
+        static void DisplayPlayerNames(string[] players)
+        {
+            WriteLine("Player names:");
+            for (int i = 0; i < players.Length; i++)
+            {
+                WriteLine(players[i]);
+            }
+        }
+
         static void Gamestart()
         {
             Clear();
             WriteLine("The game is starting...");
+            int numPlayers = GetPlayerNum("Enter the number of players: ");
+            string[] players = GetPlayerNames(numPlayers);
+            DisplayPlayerNames(players);
+            Awaitingkeypress(); // Add this line to wait for key press after displaying player names
+
+            Revolver revolver1 = new Revolver();
+            
         }
+
         static void Viewrules()
         {
             Clear();
@@ -55,8 +107,8 @@ namespace Rouge_Roulette
             WriteLine("2. First, please input the the players names");
             WriteLine("3. xyz");
             WriteLine("4. xyz");
-            Awaitingkeypress();
         }
+
         static void Awaitingkeypress()
         {
             WriteLine("\nPress any key to continue...");
